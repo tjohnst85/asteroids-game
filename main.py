@@ -2,7 +2,7 @@ import pygame
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from logger import log_state, log_event
 from player import Player
-from asteroid import Asteroid
+from asteroid import Asteroid 
 from asteroidfield import AsteroidField
 from shot import Shot
 
@@ -56,7 +56,7 @@ def main():
                 if shot.collides_with(asteroid):
                     log_event("asteroid_shot")
                     pygame.sprite.Sprite.kill(shot)
-                    pygame.sprite.Sprite.kill(asteroid)
+                    asteroid.split()
 
 if __name__ == "__main__":
     main()
